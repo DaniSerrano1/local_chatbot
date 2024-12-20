@@ -18,24 +18,28 @@ Este proyecto implementa una aplicación de chatbot local utilizando WebUI y Oll
 
 ## 🚀 Instalación y configuración
 
-1.	Clona este repositorio:
-
+1. Clona este repositorio:  
+```plaintext
 git clone https://github.com/tu-usuario/chatbot-docker-app.git
 cd chatbot-docker-app
+```
 
-2.	Construye las imágenes Docker:
+2.	Inicia los contenedores:
+```plaintext
+docker-compose up -d
+```
 
-docker-compose build
+3.	Accede a la aplicación:
+•	Abre tu navegador y ve a: http://localhost:3000
 
-3.	Inicia los contenedores:
-
-docker-compose up
-
-4.	Accede a la aplicación:
-•	Abre tu navegador y ve a: http://localhost:8080
+4.	Para los contenedores:
+```plaintext
+docker-compose down
+```
 
 ## 📂 Estructura del proyecto
 
+```plaintext
 chatbot-docker-app/
 ├── docker-compose.yml          # Configuración de múltiples servicios
 ├── backend/                    # Volumen con backend de WebUI
@@ -44,26 +48,4 @@ chatbot-docker-app/
 │   ├── blobs/                  # Archivos estáticos de la WebUI
 │   └── manifests/              # Servidor principal (Flask/FastAPI)
 └── README.md                   # Este archivo
-
-⚙️ Configuración adicional
-•	Modelos de Ollama: Para usar modelos personalizados, configura los parámetros en docker-compose.yml:
-
-environment:
-
-•	Puertos: Por defecto, WebUI usa el puerto 3000 y Ollama el puerto 8080. Puedes modificarlos en el archivo docker-compose.yml.
-
-🧰 Comandos útiles
-
-•	Detener los contenedores:
-
-docker-compose down
-
-
-•	Ver logs:
-
-docker-compose logs -f
-
-
-•	Reconstruir imágenes después de cambios:
-
-docker-compose build
+```
